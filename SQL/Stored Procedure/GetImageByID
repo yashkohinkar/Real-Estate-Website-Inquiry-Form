@@ -1,0 +1,10 @@
+CREATE PROCEDURE GetImageById
+    @Id INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT Photos
+    FROM tblproperties
+    WHERE ID = @Id;
+END
