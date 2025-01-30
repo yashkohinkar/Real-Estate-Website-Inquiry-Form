@@ -1,0 +1,28 @@
+USE [PropertyHub]
+GO
+
+/****** Object:  Table [dbo].[tblproperties]    Script Date: 30-01-2025 16:09:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tblproperties](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](50) NOT NULL,
+	[Location] [nvarchar](50) NOT NULL,
+	[Price] [nvarchar](50) NOT NULL,
+	[Description] [nvarchar](max) NOT NULL,
+	[Photos] [varbinary](max) NOT NULL,
+	[Date&Time] [datetime] NOT NULL,
+ CONSTRAINT [PK_tblproperties] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tblproperties] ADD  CONSTRAINT [DF_tblproperties_Date&Time]  DEFAULT (getdate()) FOR [Date&Time]
+GO
+
