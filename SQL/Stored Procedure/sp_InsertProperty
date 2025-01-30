@@ -1,0 +1,13 @@
+CREATE PROCEDURE sp_InsertProperty
+    @Title NVARCHAR(50),
+    @Location NVARCHAR(50),
+    @Price	NVARCHAR(50),
+    @Description NVARCHAR(MAX),
+    @Image VARBINARY(MAX)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO tblproperties (Title, Location, Price, Description, Photos)
+    VALUES (@Title, @Location, @Price, @Description, @Image);
+END
