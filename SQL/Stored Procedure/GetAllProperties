@@ -1,4 +1,4 @@
-CREATE PROCEDURE [dbo].[GetAllProperties]
+CREATE PROCEDURE GetAllProperties
 AS
 BEGIN
     SET NOCOUNT ON;
