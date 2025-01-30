@@ -1,0 +1,8 @@
+CREATE PROCEDURE [dbo].[GetAllProperties]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    SELECT ID, Title, Location, Price, Description
+    FROM tblproperties; -- Replace 'Properties' with your actual table name
+END
