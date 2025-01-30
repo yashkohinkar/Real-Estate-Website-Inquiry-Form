@@ -1,0 +1,16 @@
+CREATE PROCEDURE InsertInquiry
+    @Name NVARCHAR(50),
+    @Phone NVARCHAR(50),
+    @Email NVARCHAR(50),
+    @Budget NVARCHAR(50),
+    @Location NVARCHAR(50),
+    @Amenities NVARCHAR(50),
+    @FlatType NVARCHAR(50),
+    @Possession NVARCHAR(50)
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    INSERT INTO tblinquiryform (name, phone, email, budget, location, amenities, flattype, possession)
+    VALUES (@Name, @Phone,@Email, @Budget, @Location,@Amenities,@FlatType,@Possession);
+END
